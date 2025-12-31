@@ -57,16 +57,16 @@ portfolioItems.forEach(item => {
   div.className = 'portfolio-item'
 
   div.innerHTML = `
-      <div class="portfolio-image-box" style="position: relative; width: 100%; height: 300px; overflow: hidden; background: #000;">
+      <div class="portfolio-image-box" style="position: relative; overflow: hidden; background: #000;">
         <div class="wistia_embed wistia_async_${item.wistiaId} videoFoam=true" 
-             style="height:100%; width:100%; position:absolute; top:0; left:0; opacity:0; transition: opacity 0.4s ease; z-index: 2;">
+             style="position:absolute; top:0; left:0; opacity:0; transition: opacity 0.4s ease; z-index: 2;">
           &nbsp;
         </div>
         
         <img src="${item.imageUrl}" 
              alt="${item.title}" 
              class="portfolio-img" 
-             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;" />
+             style="position: absolute; top: 0; left: 0; object-fit: cover; z-index: 1;" />
 
         <div class="tag-container" style="z-index: 3; position: absolute; bottom: 10px; left: 10px;">
           ${item.tags.map(tag => `<span class="badge2">${tag}</span>`).join('')}
